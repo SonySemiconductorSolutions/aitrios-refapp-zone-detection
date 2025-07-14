@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - "8000:8000"
+      - "3000:3000"
+    environment:
+      POSTGRES_USER: youruser
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: yourdatabase
+      SQLALCHEMY_DATABASE_URI: postgresql://youruser:yourpassword@db/yourdatabase
+    volumes:
+      - ..:/workspace:cached
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17.1
+    environment:
+      POSTGRES_USER: youruser
+      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_DB: yourdatabase
+    ports:
+      - "5432:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
