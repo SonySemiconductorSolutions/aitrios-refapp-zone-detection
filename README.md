@@ -52,7 +52,7 @@ The repository is organized as follows:
 
 #### `.devcontainer`
 
-This directory contain the files necessary to run this project in a development container (dev container), be it in **GitHub Codespaces** or **Visual Studio Code**.
+This directory contains the files necessary to run this project in a development container (dev container), be it in **GitHub Codespaces** or **Visual Studio Code**.
 More details how to use it are provided in the [USAGE.md](./docs/USAGE.md) document.
 
 #### `.github/workflows/`
@@ -103,30 +103,28 @@ To get started with the Zone Detection Application, follow the steps below.
 
 ### Prepare a device on AITRIOS Console
 
-To run this reference solution you need to have a CSV26 camera to be enrolled to your project in the Aitrios Console. In addition, it should have deployed a zone detection Edge application and a compatible object detection AI model. These artifacts should first be obtained locally, then imported to the Console and finaly be deployed on device.
+To run this reference solution you need to have a CSV26 camera to be enrolled to your project in the Aitrios Console. In addition, it should have deployed a zone detection Edge application and a compatible object detection AI model. These artifacts should first be obtained locally, then imported to the Console and finally be deployed on device.
 
 > _Note_ </br>
-> For basic device and console operation, please refer to the [**Device Setup Guide**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/device-setup-guide/) and [**Console User Manual**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/console-user-manual/).
+> For basic device and console operation, please refer to the [**Console V2 Device Setup Guide**](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/device-setup-guide) and [**Console V2 User Manual**](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/console-user-manual), or [**Console V1 Device Setup Guide**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/device-setup-guide/) and [**Console V1 User Manual**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/console-user-manual/).
 
 #### Create and deploy artifacts
 
-The reference solution requires a model and an edge application to be deployed on the device. In some cases, the process for obtaining and deploying these artifacts varies between versions of Console for AITRIOS, V1 and V2. When applicable, such differentce is directly indicated in further description.
+The reference solution requires a model and an edge application to be deployed on the device. In some cases, the process for obtaining and deploying these artifacts varies between versions of Console for AITRIOS, V1 and V2. When applicable, such difference is directly indicated in further description.
 
 ##### AI Model
-- In order to obtain the model, follow the description in [ai_model/model.md](https://github.com/SonySemiconductorSolutions/aitrios-sample-application-reference/blob/main/ai_model/model.md) of this repository.
+- In order to obtain the model, follow the description in [ai_model/model.md](./ai_model/model.md) of this repository.
 The AI model is obtained as a `packerOut.zip` or `yoloXXX_imx.onnx` file and needs to be imported to the AITRIOS Console and then deployed to the device.
-- To import the AI model into **Console**, follow the [PyTorch Model Deployment Guide](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/pytorch-model-deployment-guide?version=2025-02-03) from AITRIOS | Developer Site.
+- To import the AI model into Console, follow the [**Console V2 Deployment Guide for PyTorch AI Model**](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/deployment-guide-for-pytorch-ai-model) or [**Console V1 PyTorch Model Deployment Guide**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/pytorch-model-deployment-guide).
 
 ##### Edge Application
 
-- In order to get the Edge Application, follow the description in [edge_app/edge_app_v1.md](./edge_app/edge_app_v1.md) of this repository for V1 or the description in [edge_app/edge_app_v2.md](./edge_app/edge_app_v2.md) for V2. You will obtain an Edge Application that will need to be imported to the AITRIOS Console and then deployed to the device.
+- In order to get the Edge Application, follow the description in [edge_app/edge_app_v1.md](./edge_app/edge_app_v1.md) of this repository for V1 or the description in [edge_app/edge_app_v2.md](./edge_app/edge_app_v2.md) for V2.
 
   > **NOTE**<br>
-  > Note that for V1 the Edge Application artifact would be a single file of type `.wasm`/`.aot`, while V2 would result in an Edge Appliction Package.
+  > Note that for V1 the Edge Application artifact would be a single file of type `.wasm`/`.aot`, while V2 would result in an Edge Application Package.
 
--  For instructions on how to import an Edge Application into **Console**, and how to deploy it to the device check [**Console User Manual**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/console-user-manual/).
-    > **NOTE**<br>
-    > At the moment of writing this document the **Console User Manual** only included instructions for importing V1 Edge Applications. No documentation was available about importing V2 Edge Applications as Edge Application Packages.
+- For instructions on how to import an Edge Application into Console and deploy it to the device, check the [**Console V2 User Manual**](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/console-user-manual) or [**Console V1 User Manual**](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/console-user-manual/).
 
 #### Configure the Edge Application
 
@@ -167,7 +165,7 @@ You can then apply the following configuration to the Edge Application deployed 
 ```
 
 > **Note**<br/>
-> For general details on the Edge Application interface, check the [Edge Application Interface JSON Specification](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/console-v2/edge-application-interface-json-specification) page on the AITRIOS developer website. Pay attention to the [`port_settings` subsection](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/console-v2/edge-application-interface-json-specification?progLang=#_portsettingsSpec) <br/>
+> For general details on the Edge Application interface, check the [Edge Application Interface JSON Specification](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/edge-application-interface-json-specification) page on the AITRIOS developer website. Pay attention to the [`port_settings` subsection](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/edge-application-interface-json-specification?progLang=#_portsettingsSpec) <br/>
 > For details on the custom settings for the zone detection Edge Application, check its [README.md](https://github.com/SonySemiconductorSolutions/aitrios-sdk-edge-app/tree/main/sample_apps/detection#custom-parameters).
 
 ### Check prerequisites for executing the Reference Solution
@@ -230,7 +228,7 @@ docker compose up frontend
 ```
 
 >  **Note**</br>
-> This  approach doesn't suport debuging. To run app in the debugging mode you should start frontend and backend separately.
+> This  approach doesn't support debugging. To run app in the debugging mode you should start frontend and backend separately.
 
 #### Frontend
 
@@ -242,7 +240,7 @@ For more detailed usage instructions, see the [backend README](./backend/README.
 
 ## Trademark
 
-- [Read This First](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/read-this-first)
+- [Read This First](https://developer.aitrios.sony-semicon.com/en/docs/developer-edition/console-v2/read-this-first)
 
 ## Notice
 
