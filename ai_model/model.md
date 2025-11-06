@@ -5,7 +5,7 @@ There are two types of object detection models (networks) available for use with
 - SSD Mobilenet-v1 model (for v1 and v2) and
 - Ultralytics YOLO: Yolov8n and Yolo11n model (v2 only)
 > [!NOTE]
-That although all models can be deployed to the IMX500 independly of whether the device runs v1 or v2 firmware, they need to be matched with a compatible Edge App.
+That although all models can be deployed to the IMX500 independently of whether the device runs v1 or v2 firmware, they need to be matched with a compatible Edge App.
 The Edge App that we provide for **v1** is only compatible with the SSD Mobilenet-v1 model and will not work with the Yolov8n/Yolo11n model.*
 
 # How to obtain a ready-to-use Ultralytics YOLO model
@@ -70,10 +70,11 @@ You can modify or extend the script as needed based on [Ultralytics' guidelines]
 # How to obtain a ready-to-use SSD Mobilenet-v1 model
 
 You can download a ready-to-use SSD Mobilenet-v1 model from the
-[AITRIOS Developer Site](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/downloads/console-v2).
-Please choose the Sample AI Model
-[*ssd_mobilenet_v1_0.75_packerOut*](https://developer.aitrios.sony-semicon.com/en/file/download/ssd_mobilenet_v1_0-75_packerout)
-for the Object Detection task.
+[**Console V2 Downloads**](https://developer.aitrios.sony-semicon.com/en/downloads/developer-edition/console-v2).
+Please choose the Sample AI Model for the Object Detection task.
+
+  > **NOTE**<br>
+  > The AI model is downloaded from Console V2 Downloads, but can be used with both V1 and V2 Console versions.
 
 Make sure to follow the instructions on the Developer Site to ensure to have a compatible set of firmware,
 AI model and sample application.
